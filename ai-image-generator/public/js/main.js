@@ -35,6 +35,7 @@ const generateImageRequest = async (prompt, size) => {
     }
 
     const data = await response.json()
+    removeSpinner()
     console.log(data)
   } catch (error) {
     document.querySelector('.msg').textContent = error

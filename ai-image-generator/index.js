@@ -6,7 +6,7 @@ import { OpenAIRouter } from './src/routes/OpenAI.routes.js'
 import { getDirName } from './src/utils/utils.js'
 
 dotenv.config()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5015
 
 const app = express()
 
