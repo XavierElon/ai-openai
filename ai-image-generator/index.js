@@ -1,6 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import { OpenAIRouter } from './routes/OpenAI.routes'
+import { OpenAIRouter } from './src/routes/OpenAI.routes.js'
 
 dotenv.config()
 const port = process.env.PORT || 5000
