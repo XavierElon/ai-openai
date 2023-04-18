@@ -1,6 +1,9 @@
 const onSubmit = (e) => {
   e.preventDefault()
 
+  document.querySelector('.msg').textContent = ''
+  document.querySelector('#image').src = ''
+
   const prompt = document.querySelector('#prompt').value
   const size = document.querySelector('#size').value
 
@@ -8,8 +11,6 @@ const onSubmit = (e) => {
     alert('Please add some text')
     return
   }
-
-  console.log(prompt, size)
 
   generateImageRequest(prompt, size)
 }
@@ -35,8 +36,12 @@ const generateImageRequest = async (prompt, size) => {
     }
 
     const data = await response.json()
-    removeSpinner()
     console.log(data)
+    const imageUrl = data.data
+
+    document.querySelector('#image').src = imageUrl
+
+    removeSpinner()
   } catch (error) {
     document.querySelector('.msg').textContent = error
     console.log(error)
